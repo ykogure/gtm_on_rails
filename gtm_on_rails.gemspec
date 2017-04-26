@@ -9,9 +9,9 @@ Gem::Specification.new do |s|
   s.version     = GtmOnRails::VERSION
   s.authors     = ["ykogure"]
   s.email       = ["renkin1008@gmail.com"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of GtmOnRails."
-  s.description = "TODO: Description of GtmOnRails."
+  s.homepage    = "https://github.com/ZIGExN/gtm_on_rails"
+  s.summary     = "An plugin that integrate Google Tag Manager easy with Rails"
+  s.description = "An plugin that integrate Google Tag Manager easy with Rails"
   s.license     = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
