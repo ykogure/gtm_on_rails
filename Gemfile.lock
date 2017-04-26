@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     gtm_on_rails (0.1.0)
-      rails (~> 5.0.2)
+      rails (>= 3.2.22)
 
 GEM
   remote: https://rubygems.org/
