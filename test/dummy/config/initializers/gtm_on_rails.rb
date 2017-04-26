@@ -8,7 +8,7 @@ GtmOnRails.configure do |config|
 
   # Settings that send google tag manager controller and action name by dataLayer.
   # Be careful using this, if you enable this option, controller and action name output in html source code.
-  config.send_controller_and_action_in_data_layer = false
+  config.send_controller_and_action_in_data_layer = true
 
   # If somthing error occurred when output tags, subsequent tag's output is stopped and run subsequent processing. 
   # The point is, dataLayer error won't affect displaying website, if this option is enable.

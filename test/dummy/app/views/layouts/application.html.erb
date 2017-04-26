@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <%= render_gtm_on_rails_tag_in_head %>
+
     <title>Dummy</title>
     <%= csrf_meta_tags %>
 
@@ -9,7 +11,7 @@
   </head>
 
   <body>
-    <%= render_gtm_on_rails_tag %>
+    <%= render_gtm_on_rails_tag_in_body %>
 
     <%= yield %>
   </body>
