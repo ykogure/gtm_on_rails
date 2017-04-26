@@ -4,7 +4,11 @@ module GtmOnRails
       extend ActiveSupport::Concern
 
       included do
-        before_action :initialize_data_layer
+        if Rails::VERSION::MAJOR == 3
+          before_filter :initialize_data_layer
+        else
+          before_action :initialize_data_layer
+        end
         helper_method :data_layer
       end
 
