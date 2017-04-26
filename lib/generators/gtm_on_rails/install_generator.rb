@@ -10,8 +10,11 @@ module GtmOnRails
       end
 
       def insert_javascript_tag
+        inject_into_file "app/views/layouts/application.html.erb", after: /<head[\s]?[^>]*>/ do
+          "\n    <%= render_gtm_on_rails_tag_in_head %>\n"
+        end
         inject_into_file "app/views/layouts/application.html.erb", after: /<body[\s]?[^>]*>/ do
-          "\n    <%= render_gtm_on_rails_tag %>\n"
+          "\n    <%= render_gtm_on_rails_tag_in_body %>\n"
         end
       end
     end
