@@ -19,7 +19,7 @@ gem 'gtm_on_rails'
 $ bundle
 ```
 
-最後に以下のコマンドを実行して下さい。
+最後に以下のコマンドを実行して初期設定を行って下さい。
 ```bash
 $ rails g gtm_on_rails:install
 ```
