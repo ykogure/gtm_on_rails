@@ -37,6 +37,41 @@ controller名とaction名はJavaScriptのコードとしてHTMLのソースコ�
 この設定を有効にすることによって、JavaScriptのコードとして出力される際に、dataLayerに設定した値などの問題でエラーが発生場合にエラーを握りつぶします。
 つまり、計測周りのエラーによってサイトの表示に影響が出ないようにします。
 
+## Usage
+#### 基本
+`@gtm_on_rails_data_layer`という変数にdataLayerで送信したい内容をHash型で追加するだけでdataLayerで好きな値を送信できます。
+controller内等で以下のように記述する感じになると思います。
+
+```ruby
+@gtm_on_rails_data_layer.push({
+  name: 'name'
+})
+```
+
+送信したdataLayerの内容は、GoogleTagManager側で変数に設定する等して使用して下さい。
+
+#### `GtmOnRails::DataLayerObject`
+```ruby
+object = GtmOnRails::DataLayerObject.new({name: 'name'})
+@gtm_on_rails_data_layer.push(object)
+```
+Hash形式ではなく、上記のように`GtmOnRails::DataLayerObject`クラスを用いることもできます。
+
+```ruby
+object = GtmOnRails::DataLayerObject.new({name: 'name'})
+puts object.name
+```
+`GtmOnRails::DataLayerObject`クラスでは、上記のように値にアクセスできます。
+
+
+#### `GtmOnRails::DataLayerEvent`
+```ruby
+event = GtmOnRails::DataLayerEvent.new('イベント名', {name: 'name'})
+@gtm_on_rails_data_layer.push(event)
+```
+上記のように記述することで、イベント名を設定して送信できます。
+
+
 ## License
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
 
