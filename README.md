@@ -1,8 +1,7 @@
-# GtmOnRails
-Short description and motivation.
+# GTMonRails
+GTMonRails enables you to integrate Google Tag Manager easy.
 
-## Usage
-How to use my plugin.
+*Read this in other languages: [日本語](README.ja.md)*
 
 ## Installation
 Add this line to your application's Gemfile:
@@ -21,8 +20,11 @@ Or install it yourself as:
 $ gem install gtm_on_rails
 ```
 
-## Contributing
-Contribution directions go here.
+## Configure
+#### container_id
+#### data_layer_limit_byte_size
+#### send_controller_and_action_in_data_layer
+#### rescue_when_error_occurred
 
 ## License
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).

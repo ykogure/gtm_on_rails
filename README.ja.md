@@ -5,6 +5,8 @@ GTMの設置タグを出力するだけでなく、主にJavaScriptを使って�
 
 このGemは基本的には単品では機能しません。GoogleTagManager側での設定と合わせて使用して下さい。
 
+*Read this in other languages: [English](README.md)*
+
 ## Installation
 Gemfileに以下を追記して、追加して下さい。
 
