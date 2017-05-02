@@ -15,6 +15,11 @@ And then execute:
 $ bundle
 ```
 
+And then execute and initial settings:
+```bash
+$ rails g gtm_on_rails:install
+```
+
 Or install it yourself as:
 ```bash
 $ gem install gtm_on_rails
