@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
   s.description = "An plugin that integrate Google Tag Manager easy with Rails"
   s.license     = "MIT"
 
-  s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
+  s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md", "README.ja.md"]
 
   s.add_dependency "rails", ">= 3.2.22"
 
