@@ -15,9 +15,23 @@ module GtmOnRails
       @data.to_json
     end
 
+    def to_js
+      "dataLayer.push(#{self.to_json});"
+    end
+
     def method_missing(method, *args, &block)
-      if @data.has_key?(method)
-        @data[method]
+      if method.to_s.end_with?('=')
+        key     = method.to_s.chop.to_sym
+        _method = :[]=
+        _args   = [key] + args
+      else
+        key     = method
+        _method = :[]
+        _args   = [key]
+      end
+
+      if @data.has_key?(key)
+        @data.send(_method, *_args)
       else
         super
       end

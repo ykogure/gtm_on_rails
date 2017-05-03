@@ -7,7 +7,7 @@ module GtmOnRails
 
     def initialize(*args)
       options  = args.extract_options!
-      @objects = args # @objects is instances of GTM::DataLayerObject
+      @objects = args # @objects are instances of GTM::DataLayerObject
     end
 
     def push(objects)
@@ -33,7 +33,7 @@ module GtmOnRails
           raise ArgumentError.new("DataLayer bytesize is over limit #{GtmOnRails.config.data_layer_limit_byte_size} bytes. Size is #{size} bytes.")
         end
 
-        js_codes << "dataLayer.push(#{data_layer_object.to_json});"
+        js_codes << data_layer_object.to_js
       end
 
       return content_tag(:script, js_codes.join.html_safe)
