@@ -59,7 +59,8 @@ Hash形式ではなく、上記のように`GtmOnRails::DataLayerObject`クラ�
 
 ```ruby
 object = GtmOnRails::DataLayerObject.new({name: 'name'})
-puts object.name
+object.name
+object.name = 'name2'
 ```
 `GtmOnRails::DataLayerObject`クラスでは、上記のように値にアクセスできます。
 

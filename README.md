@@ -58,13 +58,14 @@ You also can use `GtmOnRails::DataLayerObject` object rather than Hash as the ab
 
 ```ruby
 object = GtmOnRails::DataLayerObject.new({name: 'name'})
-puts object.name
+object.name
+object.name = 'name2'
 ```
 You can access values with `GtmOnRails::DataLayerObject` object as the above.
 
 #### `GtmOnRails::DataLayerEvent`
 ```ruby
-event = GtmOnRails::DataLayerEvent.new('イベント名', {name: 'name'})
+event = GtmOnRails::DataLayerEvent.new('event_name', {name: 'name'})
 data_layer.push(event)
 ```
 You can send dataLayer with Google Tag Manager's event name, when write like the above code.
