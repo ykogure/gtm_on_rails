@@ -39,11 +39,11 @@ controller名とaction名はJavaScriptのコードとしてHTMLのソースコ�
 
 ## Usage
 #### 基本
-`@gtm_on_rails_data_layer`という変数にdataLayerで送信したい内容をHash型で追加するだけでdataLayerで好きな値を送信できます。
+`data_layer`という変数(正確にはhelperが呼び出す変数@gtm_on_rails_data_layer)にdataLayerで送信したい内容をHash型で追加するだけでdataLayerで好きな値を送信できます。
 controller内等で以下のように記述する感じになると思います。
 
 ```ruby
-@gtm_on_rails_data_layer.push({
+data_layer.push({
   name: 'name'
 })
 ```
@@ -53,7 +53,7 @@ controller内等で以下のように記述する感じになると思います�
 #### `GtmOnRails::DataLayerObject`
 ```ruby
 object = GtmOnRails::DataLayerObject.new({name: 'name'})
-@gtm_on_rails_data_layer.push(object)
+data_layer.push(object)
 ```
 Hash形式ではなく、上記のように`GtmOnRails::DataLayerObject`クラスを用いることもできます。
 
@@ -67,7 +67,7 @@ puts object.name
 #### `GtmOnRails::DataLayerEvent`
 ```ruby
 event = GtmOnRails::DataLayerEvent.new('イベント名', {name: 'name'})
-@gtm_on_rails_data_layer.push(event)
+data_layer.push(event)
 ```
 上記のように記述することで、イベント名を設定して送信できます。
 

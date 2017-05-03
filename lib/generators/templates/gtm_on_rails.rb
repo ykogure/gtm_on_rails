@@ -11,6 +11,6 @@ GtmOnRails.configure do |config|
   config.send_controller_and_action_in_data_layer = false
 
   # If somthing error occurred when output tags, subsequent tag's output is stopped and run subsequent processing. 
-  # The point is, dataLayer error won't affect displaying website, if this option is enable.
+  # The point is, dataLayer error won't affect displaying website, if you enable this option.
   config.rescue_when_error_occurred = false
 end
