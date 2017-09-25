@@ -20,7 +20,6 @@ module GtmOnRails
     end
 
     def to_event(event_name = 'ga_event')
-
       GtmOnRails::DataLayer::Event.new(event_name || @data[:event], @data.except(:event).deep_symbolize_keys)
     end
 
