@@ -52,23 +52,23 @@ data_layer.push({
 ```
 Configure the variable and so on Google Tag Manager when use sended values.
 
-#### `GtmOnRails::DataLayerObject`
+#### `GtmOnRails::DataLayer::Object`
 ```ruby
-object = GtmOnRails::DataLayerObject.new({name: 'name'})
+object = GtmOnRails::DataLayer::Object.new({name: 'name'})
 data_layer.push(object)
 ```
-You also can use `GtmOnRails::DataLayerObject` object rather than Hash as the above.
+You also can use `GtmOnRails::DataLayer::Object` object rather than Hash as the above.
 
 ```ruby
-object = GtmOnRails::DataLayerObject.new({name: 'name'})
+object = GtmOnRails::DataLayer::Object.new({name: 'name'})
 object.name
 object.name = 'name2'
 ```
-You can access values with `GtmOnRails::DataLayerObject` object as the above.
+You can access values with `GtmOnRails::DataLayer::Object` object as the above.
 
-#### `GtmOnRails::DataLayerEvent`
+#### `GtmOnRails::DataLayer::Event`
 ```ruby
-event = GtmOnRails::DataLayerEvent.new('event_name', {name: 'name'})
+event = GtmOnRails::DataLayer::Event.new('event_name', {name: 'name'})
 data_layer.push(event)
 ```
 You can send dataLayer with Google Tag Manager's event name, when write like the above code.

@@ -52,23 +52,23 @@ data_layer.push({
 
 送信したdataLayerの内容は、GoogleTagManager側で変数に設定する等して使用して下さい。
 
-#### `GtmOnRails::DataLayerObject`
+#### `GtmOnRails::DataLayer::Object`
 ```ruby
-object = GtmOnRails::DataLayerObject.new({name: 'name'})
+object = GtmOnRails::DataLayer::Object.new({name: 'name'})
 data_layer.push(object)
 ```
-Hash形式ではなく、上記のように`GtmOnRails::DataLayerObject`クラスを用いることもできます。
+Hash形式ではなく、上記のように`GtmOnRails::DataLayer::Object`クラスを用いることもできます。
 
 ```ruby
-object = GtmOnRails::DataLayerObject.new({name: 'name'})
+object = GtmOnRails::DataLayer::Object.new({name: 'name'})
 object.name
 object.name = 'name2'
 ```
-`GtmOnRails::DataLayerObject`クラスでは、上記のように値にアクセスできます。
+`GtmOnRails::DataLayer::Object`クラスでは、上記のように値にアクセスできます。
 
-#### `GtmOnRails::DataLayerEvent`
+#### `GtmOnRails::DataLayer::Event`
 ```ruby
-event = GtmOnRails::DataLayerEvent.new('イベント名', {name: 'name'})
+event = GtmOnRails::DataLayer::Event.new('イベント名', {name: 'name'})
 data_layer.push(event)
 ```
 上記のように記述することで、イベント名を設定して送信できます。
