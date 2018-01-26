@@ -30,7 +30,7 @@ module GtmOnRails
         # dataLayer size limit exception
         size = data_layer_object.to_json.bytesize
         if size > GtmOnRails.config.data_layer_limit_byte_size
-          logger.warn("DataLayer bytesize is over limit #{GtmOnRails.config.data_layer_limit_byte_size} bytes. Size is #{size} bytes.")
+          Rails.logger.warn("DataLayer bytesize is over limit #{GtmOnRails.config.data_layer_limit_byte_size} bytes. Size is #{size} bytes.")
           next
         end
 
