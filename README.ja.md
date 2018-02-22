@@ -62,7 +62,9 @@ data_layer.push(
 ```
 
 上記のように`before_page_view`属性を設定することで、GoogleTagManagerの「Page View」イベントより前にdataLayerをpushできます。
+
 「Page View」イベント自体にdataLayerの変数を使用したい場合等に使用します。
+
 ※GoogleAnalyticsのページビュー送信より前に「ヒット」系の送信が行われてしまうと、正常にGoogleAnalyticsのページビューが計測できない可能性があるので、使用する際は注意して下さい。
 
 #### `GtmOnRails::DataLayer::Object`

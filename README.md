@@ -62,7 +62,9 @@ data_layer.push(
 ```
 
 You also can set dataLayer values before the "Page View" event of Google Tag Manager, when you use `before_page_view` option as the above.
+
 For examle, you use this option when want to use dataLayer's variables in the "Page View" event.
+
 † Be careful of using this option, because you may not be measure PageView normalcy, when you send Hit type event to GoogleAnalytics before send PageView.
 
 #### `GtmOnRails::DataLayer::Object`
