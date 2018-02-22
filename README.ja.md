@@ -52,6 +52,19 @@ data_layer.push({
 
 送信したdataLayerの内容は、GoogleTagManager側で変数に設定する等して使用して下さい。
 
+```ruby
+data_layer.push(
+  {
+    name: 'name'
+  },
+  before_page_view: true
+)
+```
+
+上記のように`before_page_view`属性を設定することで、GoogleTagManagerの「Page View」イベントより前にdataLayerをpushできます。
+「Page View」イベント自体にdataLayerの変数を使用したい場合等に使用します。
+※GoogleAnalyticsのページビュー送信より前に「ヒット」系の送信が行われてしまうと、正常にGoogleAnalyticsのページビューが計測できない可能性があるので、使用する際は注意して下さい。
+
 #### `GtmOnRails::DataLayer::Object`
 ```ruby
 object = GtmOnRails::DataLayer::Object.new({name: 'name'})

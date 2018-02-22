@@ -10,5 +10,4 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require google_analytics_ab_test_on_rails
 //= require_tree .
