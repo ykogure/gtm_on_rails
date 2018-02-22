@@ -9,4 +9,6 @@ vendor/bundle
 log/*.log
 pkg/
 
-/test/dummy/
+# /test/dummy/
+/test/dummy/log
+/test/dummy/tmp
