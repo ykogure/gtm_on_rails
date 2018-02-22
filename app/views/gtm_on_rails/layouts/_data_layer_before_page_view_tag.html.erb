@@ -1,0 +1,14 @@
+<% begin %>
+  <!-- GTM on Rails before Page View -->
+  <%= data_layer.print_on_html(before_page_view: true) %>
+  <!-- End GTM on Rails before Page View -->
+<%-
+  rescue => e
+    if GtmOnRails.config.rescue_when_error_occurred
+      logger.warn(e.message)
+      logger.warn(e.backtrace.join("\n"))
+    else
+      raise e
+    end
+  end
+-%>
