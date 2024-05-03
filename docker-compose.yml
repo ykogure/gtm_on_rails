@@ -1,0 +1,16 @@
+version: '3.4'
+
+services:
+  app:
+    build:
+      context: .
+      target: base
+      dockerfile: Dockerfile
+    tty: true
+    stdin_open: true
+    volumes:
+      - .:/app:delegated
+      - bundle:/usr/local/bundle
+
+volumes:
+  bundle:
