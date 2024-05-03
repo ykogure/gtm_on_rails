@@ -1,16 +1,44 @@
-version: '3.4'
+version: '3.5'
 
 services:
   app:
-    build:
-      context: .
-      target: base
-      dockerfile: Dockerfile
+    build: .
+    command: >
+      /bin/bash -c "
+        cd test/dummy &&
+        rm -rf tmp/pids/server.pid &&
+        bundle exec rails s -p 3000 -b '0.0.0.0'
+      "
+    ports:
+      - "3001:3000"
     tty: true
     stdin_open: true
+    environment:
+      - HOME=/app
+      - GEM_HOME=/app/vendor/bundle/ruby/3.2.2/ruby/3.2.0
+      - BUNDLE_PATH=/app/vendor/bundle/ruby/3.2.2/ruby/3.2.0
+      - PATH=/app/vendor/bundle/ruby/3.2.2/ruby/3.2.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+      - TZ=Japan
     volumes:
-      - .:/app:delegated
-      - bundle:/usr/local/bundle
-
+      - .:/app:cached
+      - vendor:/app/vendor:cached
+      - /app/.git
+      - .ssh:/root/.ssh:rw
+      - /app/.bundle
+    depends_on:
+      - db
+  db:
+    image: mysql:8
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    environment:
+      TZ: Asia/Tokyo
+      MYSQL_ROOT_PASSWORD: password
+    ports:
+      - '3307:3306'
+    volumes:
+      - mysql-db:/var/lib/mysql
 volumes:
-  bundle:
+  mysql-db:
+    driver: local
+  vendor:
+    driver: local
