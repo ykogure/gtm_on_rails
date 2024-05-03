@@ -23,7 +23,7 @@ services:
       - .:/app:cached
       - vendor:/app/vendor:cached
       - /app/.git
-      - .ssh:/root/.ssh:rw
+      - ~/.ssh:/root/.ssh:rw
       - /app/.bundle
     depends_on:
       - db
