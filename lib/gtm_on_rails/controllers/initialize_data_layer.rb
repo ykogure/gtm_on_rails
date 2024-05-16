@@ -15,7 +15,7 @@ module GtmOnRails
       def data_layer
         @gtm_on_rails_data_layer
       end
-      
+
       private
         def initialize_data_layer
           @gtm_on_rails_data_layer = GtmOnRails::DataLayer.new
@@ -24,7 +24,7 @@ module GtmOnRails
             @gtm_on_rails_data_layer.push({
               rails_controller: controller_name,
               rails_action:     action_name
-            })
+            }, before_page_view: true)
           end
         end
     end
