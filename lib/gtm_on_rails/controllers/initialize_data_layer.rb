@@ -22,7 +22,7 @@ module GtmOnRails
 
           if GtmOnRails.config.send_controller_and_action_in_data_layer
             @gtm_on_rails_data_layer.push({
-              rails_controller: controller_name,
+              rails_controller: controller_path,
               rails_action:     action_name
             }, before_page_view: true)
           end
