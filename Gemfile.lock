@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    gtm_on_rails (0.2.1)
+    gtm_on_rails (0.2.2)
       puma
       rails (>= 3.2.22)
 
